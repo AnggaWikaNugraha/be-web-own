@@ -38,18 +38,23 @@ export interface UserType {
 
 export interface ExperienceType {
   id: string;
-  title: string;
   company: string;
-  employmentType: 'Fulltime' | 'Contract' | 'Internship' | 'Freelance';
-  startDate: string; // ISO date
-  endDate?: string; // ISO or "present"
-  duration?: string;
+  companyLogoUrl?: string;
   location?: string;
+  roles: RoleType[]; // <= satu posisi pun tetap dimasukkan ke sini
+}
+
+export interface RoleType {
+  id: string;
+  title: string;
+  employmentType: 'Fulltime' | 'Contract' | 'Internship' | 'Freelance';
+  startDate: string;
+  endDate?: string;
+  duration?: string;
   description?: string;
   skills?: string[];
   productLink?: string;
   productTitle?: string;
-  companyLogoUrl?: string;
 }
 
 export interface EducationType {
@@ -89,4 +94,25 @@ export interface ProjectType {
   createdAt: string;
   updatedAt?: string;
 }
+
+export interface FeedPostType {
+  id: string;
+  authorId: string;
+
+  content: string; // teks, bisa markdown atau plain
+  imageUrl?: string;
+  videoUrl?: string;
+
+  tags?: string[];
+
+  loveCount?: number;
+  commentCount?: number;
+  repostCount?: number;
+  shareCount?: number;
+
+  visibility?: "public" | "connection" | "private";
+  createdAt: string;
+  updatedAt?: string;
+}
+
 ```
