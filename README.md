@@ -70,4 +70,23 @@ export interface CertificateType {
   expirationDate?: string;
   credentialUrl?: string;
 }
+
+export interface ProjectType {
+  id: string;
+  title: string;
+  description: string;
+  ownerId: string; // referensi ke user._id
+  // atau ownerUsername?: string;
+
+  role?: string;
+  company?: string;
+  techStack?: string[];
+  year?: string;
+  isPrivate?: boolean;
+  demoUrl?: string;
+  repoUrl?: string;
+  coverImage?: string;
+  createdAt: string;
+  updatedAt?: string;
+}
 ```
