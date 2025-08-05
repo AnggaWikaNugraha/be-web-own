@@ -35,4 +35,39 @@ export interface UserType {
   createdAt: string;
   updatedAt?: string;
 }
+
+export interface ExperienceType {
+  id: string;
+  title: string;
+  company: string;
+  employmentType: 'Fulltime' | 'Contract' | 'Internship' | 'Freelance';
+  startDate: string; // ISO date
+  endDate?: string; // ISO or "present"
+  duration?: string;
+  location?: string;
+  description?: string;
+  skills?: string[];
+  productLink?: string;
+  productTitle?: string;
+  companyLogoUrl?: string;
+}
+
+export interface EducationType {
+  id: string;
+  school: string;
+  degree: string; // e.g., S1, D3, etc
+  fieldOfStudy: string;
+  startYear: number;
+  endYear?: number;
+  description?: string;
+}
+
+export interface CertificateType {
+  id: string;
+  title: string;
+  issuer: string;
+  issueDate: string; // ISO
+  expirationDate?: string;
+  credentialUrl?: string;
+}
 ```
